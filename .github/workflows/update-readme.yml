@@ -1,0 +1,39 @@
+name: Update README from repos.yaml
+
+on:
+  push:
+    paths:
+      - 'repos.yaml'
+      - 'source/Se.Core.ReadmeUpdater.Cli/**'
+  workflow_dispatch:
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Restore dependencies
+        run: dotnet restore source/Se.Core.ReadmeUpdater.Cli/Se.Core.ReadmeUpdater.Cli.csproj
+
+      - name: Build
+        run: dotnet build source/Se.Core.ReadmeUpdater.Cli/Se.Core.ReadmeUpdater.Cli.csproj --configuration Release
+
+      - name: Run CLI to update README.md
+        run: dotnet run --project source/Se.Core.ReadmeUpdater.Cli/Se.Core.ReadmeUpdater.Cli.csproj
+
+      - name: Commit and push README.md if changed
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add README.md
+          git diff --cached --quiet || git commit -m "chore(readme): auto-update from repos.yaml [skip ci]"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
