@@ -1,0 +1,14 @@
+config:
+  profile-name: 606
+  github-url: https://github.com/606
+  repo-url: https://github.com/606/{repo}
+
+security:
+  - name: se-kepass
+    description: Cli kerberos management using one-password cli.
+    visibility: public
+
+api:
+  - name: se-api-gateway
+    description: generic API Gateway implementation.
+    visibility: public
