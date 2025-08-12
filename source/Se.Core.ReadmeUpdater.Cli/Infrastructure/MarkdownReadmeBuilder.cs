@@ -15,7 +15,10 @@ public class MarkdownReadmeBuilder : IReadmeBuilder
         sb.AppendLine("This repository contains indexes for multiple project repositories grouped by category.\n");
         foreach (var category in categories)
         {
-            sb.AppendLine($"## {category.Key}\n");
+            var catName = string.IsNullOrEmpty(category.Key)
+                ? category.Key
+                : char.ToUpper(category.Key[0]) + category.Key.Substring(1);
+            sb.AppendLine($"## {catName}\n");
             foreach (var repo in category.Value)
             {
                 var url = repo.Url;
