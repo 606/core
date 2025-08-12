@@ -1,7 +1,7 @@
 using System.IO;
-using Se.Core.ReadmeUpater.Cli.Interfaces;
+using Se.Core.ReadmeUpdater.Cli.Interfaces;
 
-namespace Se.Core.ReadmeUpater.Cli.Infrastructure;
+namespace Se.Core.ReadmeUpdater.Cli.Infrastructure;
 
 public class FileWriter : IFileWriter
 {

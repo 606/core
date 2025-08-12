@@ -1,7 +1,7 @@
 using System.Collections.Generic;
-using Se.Core.ReadmeUpater.Cli.Classes;
+using Se.Core.ReadmeUpdater.Cli.Classes;
 
-namespace Se.Core.ReadmeUpater.Cli.Interfaces;
+namespace Se.Core.ReadmeUpdater.Cli.Interfaces;
 
 public interface IReadmeBuilder
 {
