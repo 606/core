@@ -2,11 +2,11 @@
 using System;
 using YamlDotNet.Serialization;
 using YamlDotNet.Serialization.NamingConventions;
-using Se.Core.ReadmeUpater.Cli.Interfaces;
-using Se.Core.ReadmeUpater.Cli.Infrastructure;
-using Se.Core.ReadmeUpater.Cli.Services;
+using Se.Core.ReadmeUpdater.Cli.Interfaces;
+using Se.Core.ReadmeUpdater.Cli.Infrastructure;
+using Se.Core.ReadmeUpdater.Cli.Services;
 
-namespace Se.Core.ReadmeUpater.Cli;
+namespace Se.Core.ReadmeUpdater.Cli;
 
 static class Program
 {
@@ -18,7 +18,7 @@ static class Program
 		IYamlRepoReader repoReader = new YamlRepoReader(deserializer);
 		IReadmeBuilder readmeBuilder = new MarkdownReadmeBuilder();
 		IFileWriter fileWriter = new FileWriter();
-		var updater = new ReadmeUpdater(repoReader, readmeBuilder, fileWriter);
+	var updater = new Services.ReadmeUpdater(repoReader, readmeBuilder, fileWriter);
 
 
 		var yamlPath = RepoRootLocator.GetYamlPath(args);

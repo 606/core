@@ -1,6 +1,6 @@
 using System;
 
-namespace Se.Core.ReadmeUpater.Cli.Services;
+namespace Se.Core.ReadmeUpdater.Cli.Services;
 
 public static class FileValidator
 {

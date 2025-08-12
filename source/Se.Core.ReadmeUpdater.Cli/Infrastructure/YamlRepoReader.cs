@@ -1,10 +1,10 @@
 using System.Collections.Generic;
 using System.IO;
 using YamlDotNet.Serialization;
-using Se.Core.ReadmeUpater.Cli.Classes;
-using Se.Core.ReadmeUpater.Cli.Interfaces;
+using Se.Core.ReadmeUpdater.Cli.Classes;
+using Se.Core.ReadmeUpdater.Cli.Interfaces;
 
-namespace Se.Core.ReadmeUpater.Cli.Infrastructure;
+namespace Se.Core.ReadmeUpdater.Cli.Infrastructure;
 
 public class YamlRepoReader : IYamlRepoReader
 {

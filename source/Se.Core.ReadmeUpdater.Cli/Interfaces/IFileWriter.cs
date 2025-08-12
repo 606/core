@@ -1,4 +1,4 @@
-namespace Se.Core.ReadmeUpater.Cli.Interfaces;
+namespace Se.Core.ReadmeUpdater.Cli.Interfaces;
 
 public interface IFileWriter
 {

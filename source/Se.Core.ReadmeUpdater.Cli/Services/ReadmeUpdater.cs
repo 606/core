@@ -1,8 +1,8 @@
-using Se.Core.ReadmeUpater.Cli.Interfaces;
+using Se.Core.ReadmeUpdater.Cli.Interfaces;
 using System.Collections.Generic;
-using Se.Core.ReadmeUpater.Cli.Classes;
+using Se.Core.ReadmeUpdater.Cli.Classes;
 
-namespace Se.Core.ReadmeUpater.Cli.Services;
+namespace Se.Core.ReadmeUpdater.Cli.Services;
 
 public class ReadmeUpdater
 {

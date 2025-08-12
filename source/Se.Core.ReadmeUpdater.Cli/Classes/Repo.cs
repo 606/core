@@ -1,5 +1,5 @@
 
-namespace Se.Core.ReadmeUpater.Cli.Classes;
+namespace Se.Core.ReadmeUpdater.Cli.Classes;
 
     public class Repo
     {
