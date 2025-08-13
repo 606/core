@@ -13,12 +13,14 @@ public class MarkdownReadmeBuilder : IReadmeBuilder
         sb.AppendLine("# Core Repository - Project Index\n");
     // (Profile, GitHub, Repo URL section removed)
         sb.AppendLine("This repository contains indexes for multiple project repositories grouped by category.\n");
-    foreach (var category in categories.OrderBy(c => c.Key.ToLowerInvariant()))
+      
+        foreach (var category in categories.OrderBy(c => c.Key.ToLowerInvariant()))
         {
             var catName = string.IsNullOrEmpty(category.Key)
                 ? category.Key
                 : char.ToUpper(category.Key[0]) + category.Key.Substring(1);
             sb.AppendLine($"## {catName}\n");
+            
             foreach (var repo in category.Value.OrderBy(r => r.Name, StringComparer.OrdinalIgnoreCase))
             {
                 var url = repo.Url;
